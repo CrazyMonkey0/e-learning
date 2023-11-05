@@ -16,6 +16,17 @@
         instructor: {{ course.owner.get_full_name }}
     </p>
     {{ object.overview|linebreaks }}
+    {% if request.user.is_authenticated %}
+    <form action="{% url "student_enroll_course" %}" method="post">
+        {{ enroll_form }}
+        {% csrf_token %}
+        <input type="submit" class="button" value="Sign up">
+    </form>
+    {% else %}
+    <a href="{% url "student_registration" %}" class="button">
+        Register to become a course participant
+    </a>
+    {% endif %}
 </div>
 {% endwith %}
 {% endblock %}

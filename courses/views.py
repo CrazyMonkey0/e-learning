@@ -1,3 +1,4 @@
+from typing import Any
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
 from django.forms.models import modelform_factory
@@ -9,6 +10,7 @@ from django.views.generic.base import TemplateResponseMixin, View
 from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
+from students.forms import CourseEnrollForm
 from .models import Course, Module, Content, Subject
 from .forms import ModuleFormSet
 
@@ -194,3 +196,9 @@ class CourseListView(TemplateResponseMixin, View):
 class CourseDetailView(DetailView):
     model = Course
     template_name = 'courses/course/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CourseDetailView, self).get_context_data(**kwargs)
+        context['enroll_form'] = CourseEnrollForm(
+            initial={'course': self.object})
+        return context
