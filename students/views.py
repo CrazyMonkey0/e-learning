@@ -63,8 +63,4 @@ class StudentCourseDetailView(DetailView):
         if 'module_id' in self.kwargs:
             # Download the current module.
             context['module'] = course.modules.get(id=self.kwargs['module_id'])
-        else:
-
-            # Download the frist module
-            context['module'] = course.modules.all()[0]
         return context
