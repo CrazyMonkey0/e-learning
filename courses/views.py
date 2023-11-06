@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
 from django.forms.models import modelform_factory
 from django.apps import apps
+from django.core.cache import cache
 from django.db.models import Count
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -181,7 +182,10 @@ class CourseListView(TemplateResponseMixin, View):
     template_name = 'courses/course/list.html'
 
     def get(self, requset, subject=None):
-        subjects = Subject.objects.annotate(total_courses=Count('courses'))
+        subjects = cache.get('all_students')
+        if not subjects:
+            subjects = Subject.objects.annotate(total_courses=Count('courses'))
+            cache.set('all_subjects', subjects)
         courses = Course.objects.annotate(total_modules=Count('modules'))
 
         if subject:
