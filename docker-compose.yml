@@ -8,6 +8,11 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
+  Memcached:
+    image: memcached
+    ports:
+      - "11211:11211"
+
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
