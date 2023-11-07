@@ -42,7 +42,8 @@
             "overview": "homosapiens",
             "created": "2023-10-21T10:29:59.675Z",
             "students": [
-                1
+                1,
+                3
             ]
         }
     },
@@ -57,7 +58,8 @@
             "overview": "gfcb",
             "created": "2023-10-23T11:39:00.392Z",
             "students": [
-                1
+                1,
+                3
             ]
         }
     },
@@ -72,7 +74,8 @@
             "overview": "xa",
             "created": "2023-10-25T12:37:04.461Z",
             "students": [
-                1
+                1,
+                3
             ]
         }
     },
@@ -87,7 +90,8 @@
             "overview": "dssd",
             "created": "2023-11-06T11:21:14.625Z",
             "students": [
-                1
+                1,
+                3
             ]
         }
     },
@@ -302,6 +306,58 @@
             "content_type": 7,
             "object_id": "2",
             "object_repr": "bambik",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2023-11-06T13:44:50.638Z",
+            "user": 1,
+            "content_type": 6,
+            "object_id": "1",
+            "object_repr": "Instructors",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2023-11-06T13:45:09.364Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "monkey",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2023-11-07T22:28:08.862Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "bambi",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2023-11-07T22:28:17.415Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "bambi",
             "action_flag": 2,
             "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
         }
@@ -852,7 +908,7 @@
         "pk": 1,
         "fields": {
             "password": "pbkdf2_sha256$600000$TOWBgnLlmmSORXrEHOgFjk$9Tbtg/YOim0W4zMN1apONv2SaVcnVw+7aj+qvswog8I=",
-            "last_login": "2023-11-06T10:54:56.865Z",
+            "last_login": "2023-11-06T15:40:56.636Z",
             "is_superuser": true,
             "username": "monkey",
             "first_name": "",
@@ -860,8 +916,10 @@
             "email": "",
             "is_staff": true,
             "is_active": true,
-            "date_joined": "2023-10-13T14:43:43.619Z",
-            "groups": [],
+            "date_joined": "2023-10-13T14:43:43Z",
+            "groups": [
+                1
+            ],
             "user_permissions": []
         }
     },
@@ -879,6 +937,26 @@
             "is_staff": false,
             "is_active": true,
             "date_joined": "2023-10-21T10:08:59Z",
+            "groups": [
+                1
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$lq0GOkzFQIiHigDKJunpFI$lkV6chX4htGeH2eQsIUgWrJkpzYSELP311aSe8nTzW0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "bambi",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-11-07T22:28:08Z",
             "groups": [
                 1
             ],
@@ -999,10 +1077,10 @@
     },
     {
         "model": "sessions.session",
-        "pk": "s3bsr1wc9675y0016medv4drungo2j29",
+        "pk": "s5vgch3u0ih6wlqdq7ab4pnuh7r0vmme",
         "fields": {
-            "session_data": ".eJxVjEEOwiAQRe_C2hApZaAu3fcMZJgBqRpISrsy3l1JutDtf-_9l_C4b9nvLa5-YXERSpx-t4D0iKUDvmO5VUm1bOsSZFfkQZucK8fn9XD_DjK23GtnVSDrSIWAhhldskqDPhvFhlOYxgRxsDDZIRKxg5hAj8jgvgwSifcHAPg44A:1qzxFw:swomQNBWX2G46Sl23sC-5pJIke97GJC6JIe2bvkWGW0",
-            "expire_date": "2023-11-20T10:54:56.942Z"
+            "session_data": ".eJxVjEEOwiAQRe_C2hApZaAu3fcMZJgBqRpISrsy3l1JutDtf-_9l_C4b9nvLa5-YXERSpx-t4D0iKUDvmO5VUm1bOsSZFfkQZucK8fn9XD_DjK23GtnVSDrSIWAhhldskqDPhvFhlOYxgRxsDDZIRKxg5hAj8jgvgwSifcHAPg44A:1r01ii:CrCW-uHFCG3HiZyRQzIie7kiOcUNGwkkiIwvl3rNIxI",
+            "expire_date": "2023-11-20T15:40:56.721Z"
         }
     }
 ]

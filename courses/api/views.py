@@ -36,7 +36,7 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
 
     @action(detail=True, methods=['post'],
             authentication_classes=[BasicAuthentication],
-            permission_classes=[IsAuthenticated],)
+            permission_classes=[IsAuthenticated])
     def enroll(self, request, *args, **kwargs):
         course = self.get_object()
         course.students.add(request.user)
