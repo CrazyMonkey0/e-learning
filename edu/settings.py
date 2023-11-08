@@ -157,3 +157,12 @@ CACHE_MIDDLEWARE_KEY_PREFIX = 'edu'
 
 # channels config
 ASGI_APPLICATION = "edu.asgi.application"
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
