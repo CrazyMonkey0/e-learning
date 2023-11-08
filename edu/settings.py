@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'embed_video',
     'memcache_status',
     'rest_framework',
-    'chat.apps.ChatConfig',
     'channels',
+    'chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +79,6 @@ TEMPLATES = [
     },
 ]
 
-ASGI_APPLICATION = 'edu.routing.application'
 WSGI_APPLICATION = 'edu.wsgi.application'
 
 
@@ -155,3 +154,6 @@ REST_FRAMEWORK = {
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 60 * 15
 CACHE_MIDDLEWARE_KEY_PREFIX = 'edu'
+
+# channels config
+ASGI_APPLICATION = "edu.asgi.application"
