@@ -1,13 +1,14 @@
 from .base import *
 
-DEBUG = False
+DEBUG = True
 
 ADMINS = (
     ('Monkey', 'Monkey@mydomain.com'),
 )
 
-# ALLOWED_HOSTS = ['educaproject.com', 'www.educaproject.com']
+# ALLOWED_HOSTS = ['eduproject.com', 'www.eduproject.com']
 ALLOWED_HOSTS = ['*']
+
 
 #
 DATABASES = {
