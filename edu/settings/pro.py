@@ -1,16 +1,15 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 
 ADMINS = (
     ('Monkey', 'Monkey@mydomain.com'),
 )
 
-# ALLOWED_HOSTS = ['eduproject.com', 'www.eduproject.com']
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['*', 'eduproject.com', 'www.eduproject.com']
 
 
-#
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql',
@@ -21,3 +20,6 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
