@@ -7,7 +7,7 @@ ADMINS = (
 )
 
 
-ALLOWED_HOSTS = ['*', 'eduproject.com', 'www.eduproject.com']
+ALLOWED_HOSTS = ['*']
 
 
 DATABASES = {
@@ -21,5 +21,12 @@ DATABASES = {
     }
 }
 
+# SEC
 
+CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1',
+                        'https://eduproject.com',
+                        'https://www.eduproject.com']
 CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
