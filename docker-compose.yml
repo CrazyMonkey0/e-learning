@@ -49,3 +49,18 @@ services:
       - "443:443"
     depends_on:
       - web
+
+  daphne:
+    build: .
+    working_dir: /code/
+    command: daphne -u /code/daphne.sock edu.asgi:application
+    restart: always
+    volumes:
+      - .:/code
+    environment:
+      - DJANGO_SETTINGS_MODULE=edu.settings.pro
+      - POSTGRES_NAME=website
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
